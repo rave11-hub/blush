@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>blush — $BLUSH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#f3c6e6;--bg2:#e6a9dc;--ink:#5a1745;--soft:#8a4a76;--hot:#d6007a;--pink:#ff4fb0;--card:rgba(255,255,255,.72);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3a1535;--bg2:#2a0f28;--ink:#ffe3f4;--soft:#e7aed3;--card:rgba(255,255,255,.08)}}
+:root[data-theme="dark"]{--bg1:#3a1535;--bg2:#2a0f28;--ink:#ffe3f4;--soft:#e7aed3;--card:rgba(255,255,255,.08)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;color:var(--ink);font-family:'Quicksand',system-ui,-apple-system,sans-serif;font-weight:500;min-height:100vh;overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;padding:20px 24px}
+.logo{font-weight:700;font-size:1.4rem;letter-spacing:-.02em}
+.pill{background:var(--card);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.9rem;box-shadow:0 0 24px rgba(255,79,176,.35);color:var(--hot);text-decoration:none}
+.hero{max-width:1000px;margin:0 auto;padding:40px 24px 20px;text-align:center}
+.tiles{display:flex;gap:clamp(8px,2.5vw,22px);justify-content:center;margin-bottom:44px}
+.tile{width:clamp(52px,14vw,120px);aspect-ratio:1;border-radius:28%;background:radial-gradient(circle at 50% 52%,var(--c,#ffd0ec) 0%,#fff 72%);box-shadow:0 0 0 2px rgba(255,255,255,.8) inset,0 0 36px var(--g,rgba(255,79,176,.35));cursor:pointer;transition:transform .35s,box-shadow .35s;border:0;padding:0}
+.tile:hover{transform:translateY(-6px)}
+.tile.on{--c:var(--hot);--g:rgba(255,79,176,.9);transform:scale(1.12)}
+h1{font-size:clamp(2.6rem,9vw,5.6rem);line-height:1;margin:0 0 16px;letter-spacing:-.04em;font-weight:700}
+h1 span{color:var(--hot)}
+.sub{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--soft);max-width:520px;margin:0 auto 28px;font-weight:600}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{background:var(--hot);color:#fff;border-radius:999px;padding:14px 28px;font-weight:700;text-decoration:none;box-shadow:0 8px 40px rgba(214,0,122,.45);font-size:1rem}
+.btn.alt{background:var(--card);color:var(--hot);box-shadow:0 0 28px rgba(255,79,176,.35)}
+.ticker{margin:56px auto 0;max-width:1000px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 24px;font-weight:700;color:var(--soft)}
+.chip{background:var(--card);border-radius:999px;padding:6px 14px;font-size:.85rem}
+.chip b{color:var(--hot)}
+section{max-width:1000px;margin:0 auto;padding:72px 24px 0}
+h2{font-size:clamp(1.6rem,5vw,2.4rem);text-align:center;margin:0 0 32px;letter-spacing:-.03em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border-radius:32px;padding:28px;box-shadow:0 0 0 2px rgba(255,255,255,.5) inset,0 0 40px rgba(255,79,176,.25);text-align:center}
+.card i{display:block;margin:0 auto 16px;width:64px;height:64px;border-radius:28%;background:radial-gradient(circle,var(--hot),#fff 78%);box-shadow:0 0 28px rgba(255,79,176,.6)}
+.card h3{margin:0 0 8px;font-size:1.2rem}
+.card p{margin:0;color:var(--soft);font-weight:600;line-height:1.5}
+footer{max-width:700px;margin:0 auto;padding:72px 24px 40px;text-align:center;color:var(--soft);font-size:.8rem;font-weight:600;line-height:1.6}
+</style>
+</head>
+<body>
+<nav><div class="logo">blush</div><a class="pill" href="#join">$BLUSH</a></nav>
+
+<header class="hero">
+  <div class="tiles" id="tiles" aria-hidden="true">
+    <button class="tile" tabindex="-1"></button><button class="tile" tabindex="-1"></button><button class="tile on" tabindex="-1"></button><button class="tile" tabindex="-1"></button><button class="tile" tabindex="-1"></button>
+  </div>
+  <h1>when it's red,<br>we <span>blush</span>.</h1>
+  <p class="sub">buy stocks on red days. get paid for it.</p>
+  <div class="btns">
+    <a class="btn" href="https://launch.o1.exchange/token/0xb2000000?chain=8453" target="_blank" rel="noopener">Buy $BLUSH</a>
+    <a class="btn alt" href="#how">How it works</a>
+  </div>
+</header>
+
+<div class="ticker"><span class="chip">🔴 red day = buy day</span><span class="chip">💗 rewards for dip buyers</span></div>
+
+<section id="how">
+  <h2>Soft landing for red days</h2>
+  <div class="grid">
+    <div class="card"><i></i><h3>1. Market turns red</h3><p>Saat pasar turun, kebanyakan orang panik. Kita tidak.</p></div>
+    <div class="card"><i></i><h3>2. You buy the dip</h3><p>Beli saham di hari merah, saat harga sedang paling murah.</p></div>
+    <div class="card"><i></i><h3>3. Get paid</h3><p>Setiap pembelian di hari merah dihargai dengan reward $BLUSH.</p></div>
+  </div>
+</section>
+
+<section id="join">
+  <h2>Join the blush</h2>
+  <div class="btns">
+    <a class="btn" href="https://launch.o1.exchange/token/0xb2000000000?chain=8453" target="_blank" rel="noopener">Buy $BLUSH</a>
+    <a class="btn alt" href="https://x.com/blushbase" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+</section>
+
+<footer>© 2026 blush. $BLUSH. Bukan saran keuangan. Investasi mengandung risiko; lakukan riset sendiri.</footer>
+
+<script>
+const t=[...document.querySelectorAll('.tile')];
+t.forEach((el,i)=>el.addEventListener('mouseenter',()=>{t.forEach(x=>x.classList.remove('on'));el.classList.add('on')}));
+let n=2;setInterval(()=>{if(matchMedia('(hover:hover)').matches&&document.querySelector('.tile:hover'))return;t[n].classList.remove('on');n=(n+1)%t.length;t[n].classList.add('on')},2200);
+</script>
+</body>
+</html>
